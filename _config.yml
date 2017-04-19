@@ -29,8 +29,8 @@ description_footer: 本站记录我工作过程中所遇到的问题！
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
 duoshuo_shortname: #chenchong
-#disqus_shortname: chenchong
-disqus_shortname: 陈冲
+disqus_shortname: chenchong
+#disqus_shortname: 陈冲
 
 # Build settings
 markdown: kramdown
