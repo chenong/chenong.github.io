@@ -8,8 +8,6 @@
 
 **[中文版 Chinese README 请点击这里 🇨🇳](https://github.com/chenong/chenong.github.io/blob/master/README-zh-cn.md)**
 
-With the escalation of jekyll version, but I also want to reconstruct my older blog theme, so I did reconstruction and added some features recently. My new blog theme will still be stored in this repository. I will also use this theme in the future. Now I have done basically, then I will focus on issues that users opend to make theme better.
-
 **My Blog Url: [http://chenong.github.io/](http://chenong.github.io/)**. If you like this theme, you can give me a star to encourage me. Welcome everyone to use it.
 
 ## Content
@@ -41,9 +39,6 @@ With the escalation of jekyll version, but I also want to reconstruct my older b
     * [4. Write post](#4-write-post)
     * [5. Local launch](#5-local-launch)
     * [6. Push to GitHub](#6-push-to-github)
-* [Donate](#donate)
-* [Update Log](#update-log)
-* [License](#license)
 
 ## Preview
 
@@ -301,91 +296,3 @@ Visit localhost:4000 to see your blog!!!
 
 If there is nothing wrong, push code to your github!
 
-## Donate
-
-You can also donate me for a coffee, and I'll do better. Thanks.
-
-|                                                                     PayPal                                                                     |                                 Wechat Pay                                  |                                   Alipay                                    |
-|:----------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
-| [![PayPal](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png)<br>Donate via PayPal ](https://www.paypal.me/chenong) | ![wechat](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bkdw3bslj206z06q3z6.jpg) | ![alipay](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bk8ikzoij20740743z5.jpg) |
-
-
-Thanks these friends!!!
-
-* 2017.04.13 received Abraham Xiao ¥30.00
-* 2017.04.11 received Wechat user ¥4.00
-* 2017.04.01 received Elvin Zeng ¥6.66
-* 2017.03.13 received Wechat user ¥6.66
-* 2017.03.04 received 史莱姆 ¥9.90
-* 2017.03.02 received 梦想小熊 ¥6.66
-* 2017.02.27 received 夏友杰 ¥6.66
-* 2017.02.26 received 兰缘小妖 ¥10.00
-* 2017.02.25 received Wechat user ¥6.66
-* 2017.02.22 received Wechat user ¥6.66
-* 2017.02.15 received Wechat user ¥10.00
-* 2017.02.06 received Light ¥10.24
-* 2017.01.15 received Wechat user ¥6.66
-* 2016.12.17 received HitNoah ¥12.00
-* 2016.12.09 received 情融 ¥6.60
-* 2016.11.25 received Wechat user ¥6.66
-* 2016.11.16 received Wechat user ¥1.00
-* 2016.10.24 received 奇峰 ¥6.66
-* 2016.10.21 received 旭廷 ¥10.00
-* 2016.09.25 received 鑫 ¥6.66
-* 2016.08.25 received Erlend Aakre $2.50
-* 2016.08.10 received Wechat user ¥4.40
-* 2016.07.25 received 邓炳初 ¥6.66
-* 2016.07.11 received 彦风 ¥6.66
-* 2016.07.07 received Klci ¥2.50
-* 2016.05.08 received 1057 ¥10.57
-* 2016.05.07 received 吴林 ¥2
-* 2016.04.29 received 北归 ¥10
-* 2016.04.28 received 魏楚阳_Brian ¥2
-* 2016.04.28 received 薛彬 ¥8.8
-
-
-## Update Log
-
-### 2017.2.28
-
-- `[^]` fix smoothScroll bug in Tencent webview like wechat and qq.  [#22](https://github.com/chenong/chenong.github.io/issues/22), [#48](https://github.com/chenong/chenong.github.io/issues/48)
-
-### 2016.6.20
-
-* `[+]` Add next post and previous post link in post page.
-* `[^]` Change the sort of font-family to avoid full-width half-width characters mistake.
-* `[^]` Fix bug in tags cloud when division by zero. [#26](https://github.com/chenong/chenong.github.io/issues/26), [#28](https://github.com/chenong/chenong.github.io/issues/28), [#30](https://github.com/chenong/chenong.github.io/issues/30)
-
-### 2016.5.11 v2.0.1
-
-* `[^]` Optimized code, Extracting common code to `comments.html`
-* `[+]` Add Google Analysis and Baidu Statistics
-* `[+]` Update README, add usage
-* `[+]` Add `favicon.ico`
-* `[^]` Fix bug at contents
-* `[^]` Change the content scroll bar CSS style（Only for `webkit` browser kernel）
-* `[^]` Change tag a color at demo page
-* `[+]` Add busuanzi counter, show the views count at footer
-* `[+]` Add back to top button
-
-### 2016.4.27 v2.0.0
-
-* `[^]` Rewrite all codes based on jekyll 3.1.2
-* `[+]` Add excerpt at index page
-* `[+]` Add recently post, categories and tags cloud at index page
-* `[+]` Add light shadow at navbar
-* `[+]` Add archives, categories, tags page
-* `[+]` Add collections page
-* `[+]` Add comments plugin with disqus or duoshuo
-* `[+]` Mobile Adaptation
-* `[+]` Fix post contents to the right side while scrolling page
-* `[+]` Fix footer at the bottom when page height is smaller than window height
-* `[^]` Use github flavored markdown to write code block(Fenced code blocks)
-* `[^]` Rewrite the demo page with Masonry
-* `[-]` Remove jQuery and BootStrap
-
-About my old blog theme, I won't maintain any more. And I put the code at  [chenong/old-blog](https://github.com/chenong/old-blog).
-
-## License
-
-[MIT License](https://github.com/chenong/chenong.github.io/blob/master/LICENSE.md)
