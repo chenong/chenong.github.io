@@ -20,6 +20,7 @@ tags: TLDK l4fwd DPDK
 ### 1.1 后端 (BE)
 
 后端负责:
+
 - RX over DPDK ports and feed them into TCP/UDP TLDK context(s) (via tle_*_rx_bulk).
 
 - retrieve packets ready to be send out from TCP/UDP TLDK context(s) and TX them over destined DPDK port.
@@ -32,20 +33,19 @@ Each BE lcore can serve multiple DPDK ports, TLDK TCP/UDP contexts.
     
     port=<uint>,addr=<ipv4/ipv6>,masklen=<uint>,mac=<ether><mtu>
     
-    port -    DPDK port id to be used to send packets to the destination.
-              It is an mandatory option.
+    port -    DPDK port id to be used to send packets to the destination. It is an mandatory option.
     addr -    destination network address. It is an mandatory option.
     masklen - destination network prefix length. It is an mandatory option.
     mac -     destination Ethernet address. It is an mandatory option.
-    mtu -     MTU to be used on that port (= application data size + L2/L3/L4
-              headers sizes, default=1514). It is an optional option.
+    mtu -     MTU to be used on that port (= application data size + L2/L3/L4 headers sizes, default=1514). It is an optional option.
 
     Below are some example of BE entries
 
     port=0,masklen=16,addr=192.168.0.0,mac=01:de:ad:be:ef:01
     port=0,addr=2001:4860:b002::,masklen=64,mac=01:de:ad:be:ef:01
 
-    These examples are also available in be.cfg file.
+These examples are also available in be.cfg file.
+
 ```cfg
 #
 # l4fwd BE config file example
@@ -61,20 +61,14 @@ port=0,addr=2001:4860:b002::,masklen=64,mac=01:de:ad:be:ef:01
 
 Each lcore can act as BE and/or FE.
 
-In UDP mode the application can reassemble input fragmented IP packets, and
-fragment outgoing IP packets (if destination MTU is less then packet size).
+In UDP mode the application can reassemble input fragmented IP packets, and fragment outgoing IP packets (if destination MTU is less then packet size).
 
     FE configuration record format:
     
-    lcore=<uint>,op=<"rx|tx|echo|fwd">,\
-    laddr=<ip>,lport=<uint16>,raddr=<ip>,rport=<uint16>,\
-    [txlen=<uint>,fwladdr=<ip>,fwlport=<uint16>,fwraddr=<ip>,fwrport=<uint16>,\
-    belcore=<uint>]
+    lcore=<uint>,op=<"rx|tx|echo|fwd">,laddr=<ip>,lport=<uint16>,raddr=<ip>,rport=<uint16>, [txlen=<uint>,fwladdr=<ip>,fwlport=<uint16>,fwraddr=<ip>,fwrport=<uint16>,belcore=<uint>]
 
-    lcore -   EAL lcore to manage that stream(s) in the FE. It is an mandatory
-              option.
-    belcore - EAL lcore to manage that stream(s) in the BE. It is an optional
-              option. lcore and belcore can specify the same cpu core.
+    lcore -   EAL lcore to manage that stream(s) in the FE. It is an mandatory option.
+    belcore - EAL lcore to manage that stream(s) in the BE. It is an optional option. lcore and belcore can specify the same cpu core.
     op -      operation to perform on that stream:
               "rx" - do receive only on that stream.
               "tx" - do send only on that stream.
@@ -87,28 +81,24 @@ fragment outgoing IP packets (if destination MTU is less then packet size).
     raddr -   remote address for the stream to open. It is an mandatory option.
     rport -   remote port for the stream to open. It is an mandatory option.
     txlen -   data length sending in each packet (mandatory for "tx" mode only).
-    fwladdr - local address for the forwarding stream(s) to open
-             (mandatory for "fwd" mode only).
-    fwlport - local port for the forwarding stream(s) to open
-             (mandatory for "fwd" mode only).
-    fwraddr - remote address for the forwarding stream(s) to open
-             (mandatory for "fwd" mode only).
-    fwrport - remote port for the forwarding stream(s) to open
-             (mandatory for "fwd" mode only).
+    fwladdr - local address for the forwarding stream(s) to open (mandatory for "fwd" mode only).
+    fwlport - local port for the forwarding stream(s) to open (mandatory for "fwd" mode only).
+    fwraddr - remote address for the forwarding stream(s) to open (mandatory for "fwd" mode only).
+    fwrport - remote port for the forwarding stream(s) to open (mandatory for "fwd" mode only).
 
     Below are some example of FE entries
 
     lcore=3,op=echo,laddr=192.168.1.233,lport=0x8000,raddr=0.0.0.0,rport=0
 
-    lcore=3,op=tx,laddr=192.168.1.233,lport=0x8001,raddr=192.168.1.56,\
-    rport=0x200,txlen=72
+    lcore=3,op=tx,laddr=192.168.1.233,lport=0x8001,raddr=192.168.1.56,rport=0x200,txlen=72
 
     lcore=3,op=rx,laddr=::,lport=0x200,raddr=::,rport=0,txlen=72
 
-    lcore=3,op=fwd,laddr=0.0.0.0,lport=11211,raddr=0.0.0.0,rport=0,\
-    fwladdr=::,fwlport=0,fwraddr=2001:4860:b002::56,fwrport=11211
+    lcore=3,op=fwd,laddr=0.0.0.0,lport=11211,raddr=0.0.0.0,rport=0,fwladdr=::,fwlport=0,fwraddr=2001:4860:b002::56,fwrport=11211
 
-    These examples are also available in fe.cfg file with some more explanation.
+
+These examples are also available in fe.cfg file with some more explanation.
+
 ```cfg
 #
 # udpfwd FE config file example
@@ -135,3 +125,5 @@ lcore=3,op=rx,laddr=::,lport=0x200,raddr=::,rport=0,txlen=72
 # <laddr=[B]:M,raddr=[2001:4860:b002::56]:11211> and visa-versa.
 lcore=3,op=fwd,laddr=0.0.0.0,lport=11211,raddr=0.0.0.0,rport=0,fwladdr=::,fwlport=0,fwraddr=2001:4860:b002::56,fwrport=11211
 ```
+### 1.3 配置文件格式
+1111
