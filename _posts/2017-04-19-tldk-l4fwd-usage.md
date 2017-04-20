@@ -21,13 +21,13 @@ tags: TLDK l4fwd DPDK
 
 后端负责:
 
-- RX over DPDK ports and feed them into TCP/UDP TLDK context(s) (via tle_*_rx_bulk).
+- RX over DPDK ports and feed them into TCP/UDP TLDK context(s) (via tle_*_rx_bulk). 通过DPDK网卡接收报文并将其注入到TLDK TCP/UDP上下文中.
 
-- retrieve packets ready to be send out from TCP/UDP TLDK context(s) and TX them over destined DPDK port.
+- retrieve packets ready to be send out from TCP/UDP TLDK context(s) and TX them over destined DPDK port. 检索TLDK TCP/UDP上下文中是否有需要发送的报文,并通过DPDK网卡发送出去.
 
-- Multiple RX/TX queues per port are supported by RSS. Right now the number of TX is same as the number of RX queue.
+- Multiple RX/TX queues per port are supported by RSS. Right now the number of TX is same as the number of RX queue. 通过RSS支持每个网卡的多RX/TX队列. 现在TX队列的数量等于RX队列的数量.
 
-Each BE lcore can serve multiple DPDK ports, TLDK TCP/UDP contexts.
+Each BE lcore can serve multiple DPDK ports, TLDK TCP/UDP contexts. 每一个BE locre能过服务多个DPDK网卡, TLDK上下文.
 
     BE configuration record format:
     
