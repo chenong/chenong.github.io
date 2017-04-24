@@ -72,7 +72,7 @@ In UDP mode the application can reassemble input fragmented IP packets, and frag
     op -      operation to perform on that stream: 在该流上执行的操作
               "rx" - do receive only on that stream.
               "tx" - do send only on that stream.
-              "echo" - mimic 模仿recvfrom(..., &addr);sendto(..., &addr); on that stream.
+              "echo" - mimic 模仿recvfrom(..., &addr);sendto(..., &addr); on that stream.
               "fwd" - forward packets between streams.
               It is an mandatory option.
     laddr -   local address for the stream to open. It is an mandatory option.
