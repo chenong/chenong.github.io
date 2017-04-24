@@ -57,23 +57,22 @@ port=0,addr=2001:4860:b002::,masklen=64,mac=01:de:ad:be:ef:01
 ### 1.2 前端 (FE)
 
 前端负责:
-- to open configured TCP/UDP streams and perform send/recv over them. These streams can belong to different TCP/UDP contexts.
+- to open configured TCP/UDP streams and perform send/recv over them. These streams can belong to different TCP/UDP contexts. 执行发送/接收配置的TCP/UDP流。 这些流可以属于不同的TCP/UDP上下文。
 
-Each lcore can act as BE and/or FE.
+Each lcore can act as BE and/or FE. 每个lcore可以作为 BE 和/或 FE。
 
-In UDP mode the application can reassemble input fragmented IP packets, and fragment outgoing IP packets (if destination MTU is less then packet size).
+In UDP mode the application can reassemble input fragmented IP packets, and fragment outgoing IP packets (if destination MTU is less then packet size). 在UDP模式下，应用程序可以重新组合输入分片的IP数据包，并分片出局IP数据包（如果目标MTU小于数据包大小）。
 
     FE configuration record format:
     
     lcore=<uint>,op=<"rx|tx|echo|fwd">,laddr=<ip>,lport=<uint16>,raddr=<ip>,rport=<uint16>, [txlen=<uint>,fwladdr=<ip>,fwlport=<uint16>,fwraddr=<ip>,fwrport=<uint16>,belcore=<uint>]
 
     lcore -   EAL lcore to manage that stream(s) in the FE. It is an mandatory option.
-    belcore - EAL lcore to manage that stream(s) in the BE. It is an optional option. lcore and belcore can specify the same cpu core.
-    op -      operation to perform on that stream:
+    belcore - EAL lcore to manage that stream(s) in the BE. It is an optional option. lcore and belcore can specify the same cpu core. lcore和belcore可以指定相同的cpu内核。
+    op -      operation to perform on that stream: 在该流上执行的操作
               "rx" - do receive only on that stream.
               "tx" - do send only on that stream.
-              "echo" - mimic recvfrom(..., &addr);sendto(..., &addr);
-              on that stream.
+              "echo" - mimic 模仿recvfrom(..., &addr);sendto(..., &addr); on that stream.
               "fwd" - forward packets between streams.
               It is an mandatory option.
     laddr -   local address for the stream to open. It is an mandatory option.
