@@ -66,7 +66,7 @@ In UDP mode the application can reassemble input fragmented IP packets, and frag
     FE configuration record format:
     
     lcore=<uint>,op=<"rx|tx|echo|fwd">,laddr=<ip>,lport=<uint16>,raddr=<ip>,rport=<uint16>, [txlen=<uint>,fwladdr=<ip>,fwlport=<uint16>,fwraddr=<ip>,fwrport=<uint16>,belcore=<uint>]
-
+    
     lcore -   EAL lcore to manage that stream(s) in the FE. It is an mandatory option.
     belcore - EAL lcore to manage that stream(s) in the BE. It is an optional option. lcore and belcore can specify the same cpu core. lcore和belcore可以指定相同的cpu内核。
     op -      operation to perform on that stream: 在该流上执行的操作
