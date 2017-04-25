@@ -421,16 +421,16 @@ page命令展示端口配置或者序列等信息:
 
 Where:
 
-[0-7]: Page of different ports.
-main: Display page zero.
-range: Display the range packet page.
-config: Display the configuration page (reserved, not used).
-pcap: Display the pcap page.
-cpu: Display some information about the system CPU.
-next: Display next page of PCAP packets.
-sequence|seq: Display a set of packets for a given port. Note: use the port command, see below, to display a new port sequence.
-rnd: Display the random bitfields of packets for a given port. Note: use the port command, see below, to display a new port sequence.
-log: Display the log messages page.
+* [0-7]: Page of different ports.
+* main: Display page zero.
+* range: Display the range packet page.
+* config: Display the configuration page (reserved, not used).
+* pcap: Display the pcap page.
+* cpu: Display some information about the system CPU.
+* next: Display next page of PCAP packets.
+* sequence|seq: Display a set of packets for a given port. Note: use the port command, see below, to display a new port sequence.
+* rnd: Display the random bitfields of packets for a given port. Note: use the port command, see below, to display a new port sequence.
+* log: Display the log messages page.
 
 ### 3.32 port
 
@@ -446,83 +446,90 @@ process命令开启或者关闭在改端口上面处理ARP/ICMP/IPv4/IPv6报文:
 
 ### 3.34 garp
 
-The garp command enables or disables Gratuitous ARP packet processing and update MAC address:
+garp命令开启或者关闭处理免费的ARP报文并更新MAC地址:
 
-garp <portlist> <state>
+    garp <portlist> <state>
 
 ### 3.35 blink
 
-The blink command blinks the link led on the given port list:
+blink命令闪烁指定网卡的链路显示灯:
 
-blink <portlist> <state>
+    blink <portlist> <state>
 
 ### 3.36 rnd
 
 The rnd command sets random mask for all transmitted packets from portlist:
+rnd命令对改端口所有的传输报文设置随机掩码:
 
-rnd <portlist> <idx> <off> <mask>
+    rnd <portlist> <idx> <off> <mask>
+
 Where:
 
-idx: random mask slot.
-off: offset in packets, where to apply mask.
-mask: up to 32 bit long mask specification (empty to disable):
-0: bit will be 0.
-1: bit will be 1.
-.: bit will be ignored (original value is retained).
-X: bit will get random value.
+* idx: random mask slot.
+* off: offset in packets, where to apply mask.
+* mask: up to 32 bit long mask specification (empty to disable):
+* 0: bit will be 0.
+* 1: bit will be 1.
+* .: bit will be ignored (original value is retained).
+* X: bit will get random value.
 
 ### 3.37 theme
 
-The theme command enables or disables the theme:
+theme命令开启或者关闭主题:
 
-theme <state>
-It also sets the color for item with foreground (fg) or background (bg) color and attribute value:
+    theme <state>
 
-theme <item> <fg> <bg> <attr>
-theme.show
+theme命令还能够设置背景前景的颜色:
 
-The theme.show command lists the item strings, colors and attributes to the items:
+    theme <item> <fg> <bg> <attr>
 
-theme.show
-theme.save
+### 3.38 theme.show
 
-The theme.save command saves the current color theme to a file:
+theme.show命令列出主题的strings，颜色，属性等信息:
 
-theme.save <filename>
+    theme.show
 
-### 3.38 start
+### 3.39 theme.save
 
-The start command starts transmitting packets:
+theme.save命令保存当前主题到文件中：
 
-start <portlist>
+    theme.save <filename>
 
-### 3.39 stop
+### 3.40 start
 
-The stop command stops transmitting packets:
+start命令开启报文传输:
 
-stop <portlist>
+    start <portlist>
 
-### 3.40 str
+### 3.41 stop
 
-The str command starts all ports transmitting:
+stop命令停止报文传输：
 
-str
+    stop <portlist>
+
+### 3.42 str
+
+str命令开启所有的端口的报文传输:
+
+    str
+
 A shortcut for start all.
 
-### 3.41 stp
+### 3.43 stp
 
-The stp command stops all ports from transmitting:
+stp命令停止所有端口的报文传输：
 
-stp
+    stp
+
 A shortcut for stop all.
 
-### 3.42 screen
+### 3.44 screen
 
 The screen command stops/starts updating the screen and unlocks/locks the window:
 
 screen stop|start
 
-### 3.43 off
+### 3.45 off
 
 The off command is a screen off shortcut:
 
@@ -531,27 +538,27 @@ on
 
 The on command screen on shortcut:
 
-### 3.44 on
+### 3.46 on
 
-### 3.45 prime
+### 3.47 prime
 
 The prime command transmits N packets on each port listed. See set prime command above:
 
 prime <portlist>
 
-### 3.46 delay
+### 3.48 delay
 
 The delay command waits a number of milliseconds before reading or executing scripting commands:
 
 delay milliseconds
 
-### 3.47 sleep
+### 3.49 sleep
 
 The sleep command waits a number of seconds before reading or executing scripting commands:
 
 sleep seconds
 
-### 3.48 dev.list
+### 3.50 dev.list
 
 The dev.list command shows the whitelist/blacklist/Virtual devices:
 
