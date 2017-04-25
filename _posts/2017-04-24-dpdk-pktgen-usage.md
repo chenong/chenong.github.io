@@ -111,9 +111,11 @@ Usage:
 
     -h: Display the usage/help information shown above:
     
-    lspci | grep Ethernet
-    &emsp;&emsp;This shows a list of all ports in the system. Some ports may not be usable by DPDK/Pktgen. The first port listed is bit 0 or least  signification bit in the -c EAL coremask. Another method is to compile and run the DPDK sample application testpmd to list out the ports DPDK is able to use: ./test_pmd -c 0x3 -n 2
-
+        lspci | grep Ethernet
+        This shows a list of all ports in the system. Some ports may not be usable by DPDK/Pktgen. 
+        The first port listed is bit 0 or least  signification bit in the -c EAL coremask. Another 
+        method is to compile and run the DPDK sample application testpmd to list out the ports DPDK
+        is able to use: ./test_pmd -c 0x3 -n 2
     -s P:file: The PCAP packet file to stream. P is the port number.
     -f filename: The script command file (.pkt) to execute or a Lua script (.lua) file. See Running Script Files.
     -l filename: The filename to write a log to.
@@ -122,19 +124,19 @@ Usage:
     -g address: Same as -G but with an optional IP address and port number. See Socket Support for Pktgen.
     -T: Enable color terminal output in VT100
     -N: Enable NUMA support.
-    -m <string>: Matrix for mapping ports to logical cores. The format of the port mapping string is defined with a BNF-like grammar as         follows:
-        
-            BNF: (or kind of BNF)
-            <matrix-string>   := """ <lcore-port> { "," <lcore-port>} """
-            <lcore-port>      := <lcore-list> "." <port-list>
-            <lcore-list>      := "[" <rx-list> ":" <tx-list> "]"
-            <port-list>       := "[" <rx-list> ":" <tx-list>"]"
-            <rx-list>         := <num> { "/" (<num> | <list>) }
-            <tx-list>         := <num> { "/" (<num> | <list>) }
-            <list>            := <num> { "/" (<range> | <list>) }
-            <range>           := <num> "-" <num> { "/" <range> }
-            <num>             := <digit>+
-            <digit>           := 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+    -m <string>: Matrix for mapping ports to logical cores. The format of the port mapping string is defined 
+        with a BNF-like grammar as follows:
+        BNF: (or kind of BNF)
+        <matrix-string>   := """ <lcore-port> { "," <lcore-port>} """
+        <lcore-port>      := <lcore-list> "." <port-list>
+        <lcore-list>      := "[" <rx-list> ":" <tx-list> "]"
+        <port-list>       := "[" <rx-list> ":" <tx-list>"]"
+        <rx-list>         := <num> { "/" (<num> | <list>) }
+        <tx-list>         := <num> { "/" (<num> | <list>) }
+        <list>            := <num> { "/" (<range> | <list>) }
+        <range>           := <num> "-" <num> { "/" <range> }
+        <num>             := <digit>+
+        <digit>           := 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 ```
 For example:
 
