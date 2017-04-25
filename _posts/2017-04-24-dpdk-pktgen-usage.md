@@ -183,8 +183,8 @@ load <path-to-file>           - Load a command/script file from the
 
 几个命令采用常见的参数，如：
 
-* portlist: A list of ports such as 2,4,6-9,12 or the word all.
-* state: This is usually on or off but will also accept enable or disable.
+* portlist: A list of ports such as <font color=#DC143C>2,4,6-9,12</font> or the word <font color=#DC143C>all</font>.
+* state: This is usually <font color=#DC143C>on</font> or <font color=#DC143C>off</font> but will also accept <font color=#DC143C>enable</font> or <font color=#DC143C>disable</font>.
 
 ### 3.2 set 网卡设置
 
