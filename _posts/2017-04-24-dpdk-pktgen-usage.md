@@ -421,16 +421,16 @@ page命令展示端口配置或者序列等信息:
 
 Where:
 
-* [0-7]: Page of different ports.
-* main: Display page zero.
-* range: Display the range packet page.
+* 0-7:    Page of different ports.
+* main:   Display page zero.
+* range:  Display the range packet page.
 * config: Display the configuration page (reserved, not used).
-* pcap: Display the pcap page.
-* cpu: Display some information about the system CPU.
-* next: Display next page of PCAP packets.
-* sequence|seq: Display a set of packets for a given port. Note: use the port command, see below, to display a new port sequence.
-* rnd: Display the random bitfields of packets for a given port. Note: use the port command, see below, to display a new port sequence.
-* log: Display the log messages page.
+* pcap:   Display the pcap page.
+* cpu:    Display some information about the system CPU.
+* next:   Display next page of PCAP packets.
+* seq:    Display a set of packets for a given port. Note: use the port command, see below, to display a new port sequence.
+* rnd:    Display the random bitfields of packets for a given port. Note: use the port command, see below, to display a new port sequence.
+* log:    Display the log messages page.
 
 ### 3.32 port
 
