@@ -525,198 +525,210 @@ A shortcut for stop all.
 
 ### 3.44 screen
 
-The screen command stops/starts updating the screen and unlocks/locks the window:
+screen命令开始或者停止更新显示屏幕，并解锁或者锁住屏幕:
 
-screen stop|start
+    screen stop|start
 
 ### 3.45 off
 
-The off command is a screen off shortcut:
+off命令是关闭屏幕的简洁命令：
 
-off
-on
-
-The on command screen on shortcut:
+    off
 
 ### 3.46 on
 
+on命令是打开屏幕的简洁命令：
+
+    on
+
 ### 3.47 prime
 
-The prime command transmits N packets on each port listed. See set prime command above:
+prime命令书传输N个报文在每个端口上:
 
-prime <portlist>
+    prime <portlist>
 
 ### 3.48 delay
 
-The delay command waits a number of milliseconds before reading or executing scripting commands:
+delay命令等待指定的milliseconds在读取或者执行脚本之前：
 
-delay milliseconds
+    delay milliseconds
 
 ### 3.49 sleep
 
-The sleep command waits a number of seconds before reading or executing scripting commands:
+sleep命令等待执行的seconds在读取或者执行脚本之前：
 
-sleep seconds
+    sleep seconds
 
 ### 3.50 dev.list
 
-The dev.list command shows the whitelist/blacklist/Virtual devices:
+dev.list命令显示白名单、黑名单或者虚拟设备信息：
 
-dev.list
-pci.list
+    dev.list
 
-The pci.list command shows all the PCI devices:
+### 3.51 pci.list
 
-pci.list
+pci.list命令列出所有的PCI设备：
 
-### 3.49 clear
+    pci.list
 
-The clear command clears the statistics:
+### 3.52 clear
 
-clear <portlist>
+clear命令清理该端口的状态信息：
 
-### 3.50 clr
+    clear <portlist>
 
-The clr command clears all statistics:
+### 3.53 clr
 
-clr
+clr命令清理所有的端口状态信息：
+
+    clr
+
 A shortcut for clear all.
 
-### 3.51 cls
+### 3.54 cls
 
-The cls command clears the screen:
+cls命令清理屏幕：
 
-cls
+    cls
+
 A shortcut for clear all.
 
-### 3.52 reset
+### 3.55 reset
 
-The reset command resets the configuration to the default:
+reset命令重置该网卡的配置信息：
 
-reset <portlist>
+    reset <portlist>
 
-### 3.53 rst
+### 3.56 rst
 
-The rst command resets the configuration for all ports:
+rst命令重置所有网卡的配置信息：
 
-rst
+    rst
+
 A shortcut for reset all.
 
-### 3.54 help
+### 3.57 help
 
-The help command displays this help for runtime commands:
+help命令显示运行时的帮助信息：
 
-help
-### 3.55 quit
+    help
 
-The quit command quits the Pktgen program:
+### 3.58 quit
 
-quit
+quit命令退出pktgen程序：
 
-### 3.56 dst.mac
+    quit
 
-The dst.mac command sets the destination MAC address start:
+### 3.59 dst.mac
 
-dst.mac start <portlist> etheraddr
+dst.mac命令设置目的MAC地址：
 
-### 3.57 src.mac
+    dst.mac start <portlist> etheraddr
 
-The src.mac command sets the source MAC address start:
+### 3.60 src.mac
 
-src.mac start <portlist> etheraddr
+src.mac命令设置源MAC地址：
 
-### 3.58 src.ip
+    src.mac start <portlist> etheraddr
 
-The src.ip command sets the source IP address properties:
+### 3.61 src.ip
 
-start: The start of the range.
-min: The minimum value in range.
-max The maximum value in range
-inc: The increment.
+src.ip命令设置源IP地址：
+
+* start:  开始范围.
+* min:    最小值.
+* max     最大值
+* inc:    递增.
+
 For example:
 
-src.ip start <portlist> ipaddr
-src.ip min <portlist> ipaddr
-src.ip max <portlist> ipaddr
-src.ip inc <portlist> ipaddr
+    src.ip start <portlist> ipaddr
+    src.ip min <portlist> ipaddr
+    src.ip max <portlist> ipaddr
+    src.ip inc <portlist> ipaddr
 
-### 3.59 dst.ip
+### 3.62 dst.ip
 
 The dst.ip command sets the destination IP address properties:
 
-start: The start of the range.
-min: The minimum value in range.
-max The maximum value in range
-inc: The increment.
+* start: The start of the range.
+* min: The minimum value in range.
+* max The maximum value in range
+* inc: The increment.
+
 For example:
 
-dst.ip start <portlist> ipaddr
-dst.ip min <portlist> ipaddr
-dst.ip max <portlist> ipaddr
-dst.ip inc <portlist> ipaddr
+    dst.ip start <portlist> ipaddr
+    dst.ip min <portlist> ipaddr
+    dst.ip max <portlist> ipaddr
+    dst.ip inc <portlist> ipaddr
 
-### 3.60 src.port
+### 3.63 src.port
 
 The src.port command sets the source port address properties:
 
-start: The start of the range.
-min: The minimum value in range.
-max The maximum value in range
-inc: The increment.
+* start: The start of the range.
+* min: The minimum value in range.
+* max The maximum value in range
+* inc: The increment.
+
 For example:
 
-src.port start <portlist> value
-src.port min <portlist> value
-src.port max <portlist> value
-src.port inc <portlist> value
+    src.port start <portlist> value
+    src.port min <portlist> value
+    src.port max <portlist> value
+    src.port inc <portlist> value
 
-### 3.61 dst.port
+### 3.64 dst.port
 
 The dst.port command sets the source port address properties:
 
-start: The start of the range.
-min: The minimum value in range.
-max The maximum value in range
-inc: The increment.
+* start: The start of the range.
+* min: The minimum value in range.
+* max The maximum value in range
+* inc: The increment.
+
 For example:
 
-dst.port start <portlist> value
-dst.port min <portlist> value
-dst.port max <portlist> value
-dst.port inc <portlist> value
+    dst.port start <portlist> value
+    dst.port min <portlist> value
+    dst.port max <portlist> value
+    dst.port inc <portlist> value
 
-### 3.62 vlan.id
+### 3.65 vlan.id
 
 The vlan.id command sets the vlan id address properties:
 
-start: The start of the range.
-min: The minimum value in range.
-max The maximum value in range
-inc: The increment.
+* start: The start of the range.
+* min: The minimum value in range.
+* max The maximum value in range
+* inc: The increment.
+
 For example:
 
-vlan.id start <portlist> value
-vlan.id min <portlist> value
-vlan.id max <portlist> value
-vlan.id inc <portlist> value
+    vlan.id start <portlist> value
+    vlan.id min <portlist> value
+    vlan.id max <portlist> value
+    vlan.id inc <portlist> value
 
-### 3.63 pkt.size
+### 3.66 pkt.size
 
 The pkt.size command sets the packet size properties:
 
-start: The start of the range.
-min: The minimum value in range.
-max The maximum value in range
-inc: The increment.
+* start: The start of the range.
+* min: The minimum value in range.
+* max The maximum value in range
+* inc: The increment.
+
 For example:
 
-pkt.size start <portlist> value
-pkt.size min <portlist> value
-pkt.size max <portlist> value
-pkt.size inc <portlist> value
+    pkt.size start <portlist> value
+    pkt.size min <portlist> value
+    pkt.size max <portlist> value
+    pkt.size inc <portlist> value
 
-### 3.64 range
+### 3.67 range
 
 The range command enables or disables the given portlist for sending a range of packets:
 
-range <portlist> <state>
+    range <portlist> <state>
