@@ -107,8 +107,10 @@ Usage:
     -m <string>  Matrix for mapping ports to logical cores
 ```
 
-&emsp;&emsp;Where the options are:
+&emsp;&emsp;
 
+```shell
+Where the options are:
     -h:  Display the usage/help information shown above:
     
          lspci | grep Ethernet
@@ -146,6 +148,7 @@ Usage:
          <range>           := <num> "-" <num> { "/" <range> }
          <num>             := <digit>+
          <digit>           := 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+```
 
 ```
 For example:
