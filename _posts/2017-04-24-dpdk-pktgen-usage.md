@@ -256,7 +256,7 @@ load命令主要加载一个配置文件从文件中：
 
 ppp(ports per page)命令设置每一页显示的的ports数量：
 
-    ppp [1-6]
+    ppp [1-6]
 
 ### 3.7 icmp.echo ICMP回应
 
@@ -266,17 +266,17 @@ icmp.echo命令开启或者关闭某个网卡的ICMP的回应功能：
 
 [state值参考上面的说明](#31-help-帮助命令)
 
-### 3.8 send
+### 3.8 send 发送ARP
 
-The send command sends a ARP request or gratuitous ARP on a set of ports:
+send命令发送一个ARP请求或者免费的ARP报文在设置的网卡上面：
 
-send arp req|grat <portlist>
+    send arp req|grat <portlist>
 
-### 3.9 mac_from_arp
+### 3.9 mac_from_arp 获取MAC地址从ARP
 
-The mac_from_arp command sets the option to get the MAC from an ARP request:
+mac_from_arp命令设置是否从ARP请求中获取MAC地址:
 
-mac_from_arp <state>
+    mac_from_arp <state>
 
 ### 3.10 proto
 
