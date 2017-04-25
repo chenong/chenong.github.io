@@ -168,6 +168,24 @@ Where the options are:
 ## 3. 运行时命令
 
 ### 3.1 help
+
+```shell
+Pktgen> help
+
+set <portlist> <xxx> value    - Set a few port values
+save <path-to-file>           - Save a configuration file using the
+                                filename
+load <path-to-file>           - Load a command/script file from the
+                                given path
+...
+```
+运行时命令如下所述。
+
+几个命令采用常见的参数，如：
+
+*portlist: A list of ports such as 2,4,6-9,12 or the word all.
+*state: This is usually on or off but will also accept enable or disable.
+
 ### 3.2 set
 
 The set command is used to set values for ports:
