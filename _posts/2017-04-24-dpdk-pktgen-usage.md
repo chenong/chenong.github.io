@@ -317,57 +317,57 @@ txtap命令开启或者关闭Tx tap接口：
 
 ### 3.16 vlan
 
-vlan命令开启或者关闭发送带有VLAN ID的报文:
+vlan命令开启或者关闭该端口发送带有VLAN ID的报文:
 
     vlan <portlist> <state>
 
 ### 3.17 vlanid
 
-The vlanid command sets the VLAN ID for the portlist:
+vlanid命令设置端口发送报文对应的VLAN ID：
 
-vlanid <portlist> <vlanid>
+    vlanid <portlist> <vlanid>
 
 ### 3.18 mpls
 
-The mpls command enables/disables sending an MPLS entry in packets:
+mpls命令设置开启或者关闭该端口发送带有MPLS的报文:
 
-mpls <portlist> <state>
+    mpls <portlist> <state>
 
 ### 3.19 mpls_entry
 
-The mpls_entry command sets the MPLS (Multiprotocol Label Switching) entry for the portlist (must be specified in hex):
+mpls_entry命令设置端口发送报文对应的MPLS (Multiprotocol Label Switching) entry：
 
-mpls_entry <portlist> <entry>
+    mpls_entry <portlist> <entry>
 
 ### 3.20 qinq
 
-The qinq command enables/disables sending a Q-in-Q header in packets:
+qinq命令设置开启或者关闭该端口发送带有Q-in-Q header的报文:
 
-qinq <portlist> <state>
+    qinq <portlist> <state>
 
 ### 3.21 qinqids
 
-The qinqids command sets the Q-in-Q ID’s for the portlist:
+qinqids命令设置改端口发送报文对应的Q-in-Q ID’s:
 
-qinqids <portlist> <id1> <id2>
+    qinqids <portlist> <id1> <id2>
 
 ### 3.22 gre
 
-The gre command enables/disables GRE (Generic Routing Encapsulation) with IPv4 payload:
+gre命令设置开启或者关闭该端口发送带有GRE (Generic Routing Encapsulation) 三层header的报文:
 
-gre <portlist> <state>
+    gre <portlist> <state>
 
 ### 3.23 gre_eth
 
-The gre_eth command enables/disables GRE with Ethernet frame payload:
+gre_eth命令设置开启或者关闭该端口发送带有GRE (Generic Routing Encapsulation) 二层header的报文:
 
-gre_eth <portlist> <state>
+    gre_eth <portlist> <state>
 
 ### 3.24 gre_key
 
-The gre_key command sets the GRE key:
+gre_key命令设置GRE key:
 
-gre_key <portlist> <state>
+    gre_key <portlist> <state>
 
 ### 3.25 pcap
 
