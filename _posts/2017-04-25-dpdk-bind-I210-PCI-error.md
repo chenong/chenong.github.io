@@ -33,6 +33,8 @@ DPDK 版本： dpdk-17.02
 
 ![dpdk_i210_supports](https://github.com/chenong/chenong.github.io/blob/master/image/dpdk_bind_i210_pci_error/dpdk_i210_supports.jpg "dpdk_i210_supports")
 
+E1000_DEV_ID_I210_COPPER_FLASHLESS 宏定义在e1000_hw.h中有定义。
+
 重新编译DPDK以及l2fwd，
 
 运行后收发包正常。
