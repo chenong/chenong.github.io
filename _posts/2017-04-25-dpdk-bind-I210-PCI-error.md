@@ -11,29 +11,15 @@ tags: DPDK inter i210 port rte_eth_dev_count return 0
 
 # DPDK 绑定I210网卡错误
 
-&emsp;&emsp;今天在测试DPDK l2fwd时遇到rte_eth_dev_count() return 0的情况，在博客中做个记录，如下图所示：
+&emsp;&emsp;今天在测试DPDK l2fwd时检测不到DPDK绑定的网卡，出现 rte_eth_dev_count() return 0 的情况，在博客中做个记录，
+
+如下图所示：
 
 ```shell
 [root@localhost l2fwd]# ./build/l2fwd  -c0xf -n4 -- -p0x3 -q 1 -T 2
 EAL: Detected 4 lcore(s)
 EAL: Probing VFIO support...
 PMD: bnxt_rte_pmd_init() called for (null)
-EAL: PCI device 0000:01:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:157b rte_igb_pmd
-EAL: PCI device 0000:02:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:157b rte_igb_pmd
-EAL: PCI device 0000:03:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:157b rte_igb_pmd
-EAL: PCI device 0000:06:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:157b rte_igb_pmd
-EAL: PCI device 0000:07:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:157b rte_igb_pmd
-EAL: PCI device 0000:08:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:157b rte_igb_pmd
-EAL: PCI device 0000:0d:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:1536 rte_igb_pmd
-EAL: PCI device 0000:0e:00.0 on NUMA socket -1
-EAL:   probe driver: 8086:1536 rte_igb_pmd
 MAC updating enabled
 EAL: Error - exiting with code: 1
   Cause: No Ethernet ports - bye
@@ -129,7 +115,7 @@ static const struct rte_pci_id pci_id_igb_map[] = {
         { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I350_SGMII) },
         { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I350_DA4) },
         { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I210_COPPER) },
-        { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I210_COPPER_FLASHLESS) }, /* add by chenchong */
+        { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I210_COPPER_FLASHLESS) }, /*add by chenchong*/
         { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I210_COPPER_OEM1) },
         { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I210_COPPER_IT) },
         { RTE_PCI_DEVICE(E1000_INTEL_VENDOR_ID, E1000_DEV_ID_I210_FIBER) },
