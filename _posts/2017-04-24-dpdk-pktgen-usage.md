@@ -191,9 +191,10 @@ load <path-to-file>           - Load a command/script file from the
 set命令主要用于设置端口的信息： 
 
     set <portlist> <command> value
+    
     <portlist>:  端口的列表.
     <command>:   下面的某个字段:
-        count:   发送报文数量.
+        count:   发送报文数量.
         size:    发送报文大小.
         rate:    发送报文速率百分比.
         burst:   批量收发报文数量.
