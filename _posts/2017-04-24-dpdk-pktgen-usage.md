@@ -195,11 +195,11 @@ set命令主要用于设置端口的信息：
     <portlist>:  端口的列表.
     <command>:   下面的某个字段:
         count:   发送报文数量.
-        size:    发送报文大小.
-        rate:    发送报文速率百分比.
-        burst:   批量收发报文数量.
-        sport:   TCP源端口号.
-        dport:   TCP目的端口号.
+        size:    发送报文大小.
+        rate:    发送报文速率百分比.
+        burst:   批量收发报文数量.
+        sport:   TCP源端口号.
+        dport:   TCP目的端口号.
         prime:   Set the number of packets to send on prime command.
         seqCnt:  Set the number of packet in the sequence to send.
         dump:    Dump the next <value> received packets to the screen.
