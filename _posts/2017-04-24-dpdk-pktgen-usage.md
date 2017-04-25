@@ -13,8 +13,7 @@ tags: DPDK pktgen
 
 ## 1. 简介
 
-&emsp;&emsp;pktgen(packet gen-erator)该软件基于DPDK快速报文处里框架开发的一个发包工具。
-
+pktgen(packet gen-erator)该软件基于DPDK快速报文处里框架开发的一个发包工具。
 &emsp;
 
 Pktgen提供的功能如下：
