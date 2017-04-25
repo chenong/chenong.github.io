@@ -167,7 +167,7 @@ Where the options are:
 
 ## 3. 运行时命令
 
-### 3.1 help
+### 3.1 help 帮助命令
 
 ```shell
 Pktgen> help
@@ -183,55 +183,59 @@ load <path-to-file>           - Load a command/script file from the
 
 几个命令采用常见的参数，如：
 
-*portlist: A list of ports such as 2,4,6-9,12 or the word all.
-*state: This is usually on or off but will also accept enable or disable.
+* portlist: A list of ports such as 2,4,6-9,12 or the word all.
+* state: This is usually on or off but will also accept enable or disable.
 
-### 3.2 set
+### 3.2 set 网卡设置
 
-The set command is used to set values for ports:
+set命令主要用于设置端口的信息： 
 
-set <portlist> <command> value
-<portlist>: A portlist as explained above.
-<command>: one of the following:
-count: Number of packets to transmit.
-size: Size of the packet to transmit.
-rate: Packet rate in percentage.
-burst: Number of packets in a burst.
-sport: Source port number for TCP.
-dport: Destination port number for TCP.
-prime: Set the number of packets to send on prime command.
-seqCnt: Set the number of packet in the sequence to send.
-dump: Dump the next <value> received packets to the screen.
+    set <portlist> <command> value
+    <portlist>:  端口的列表.
+    <command>:   下面的某个字段:
+        count:   发送报文数量.
+        size:    发送报文大小.
+        rate:    发送报文速率百分比.
+        burst:   批量收发报文数量.
+        sport:   TCP源端口号.
+        dport:   TCP目的端口号.
+        prime:   Set the number of packets to send on prime command.
+        seqCnt:  Set the number of packet in the sequence to send.
+        dump:    Dump the next <value> received packets to the screen.
+
+```shell
 For example:
 
-Pktgen> set all seqCnt 1
-The set command can also be used to set the MAC address with a format like 00:11:22:33:44:55 or 0011:2233:4455:
+    Pktgen> set all seqCnt 1
+```
+set命令也能够设置报文的MAC地址
 
-set mac <portlist> etheraddr
-The set command can also be used to set IP addresses:
+    set mac <portlist> etheraddr
 
-set ip src|dst <portlist> ipaddr
+set命令也能够设置报文的IP地址
 
-### 3.3 seq
+    set ip src|dst <portlist> ipaddr
 
-The seq command sets the flow parameters for a sequence of packets:
 
-seq <seq#> <portlist> dst-Mac src-Mac dst-IP src-IP
-                      sport dport ipv4|ipv6|vlan udp|tcp|icmp vid pktsize
-Where the arguments are:
+### 3.3 seq 报文设置
 
-<seq#>: The packet sequence number.
-<portlist>: A portlist as explained above.
-dst-Mac: The destination MAC address.
-src-Mac: The source MAC address.
-dst-IP: The destination IP address.
-src-IP: The source IP address. Make sure the src-IP has the netmask value such as 1.2.3.4/24.
-sport: The source port.
-dport: The destination port.
-IP: The IP layer. One of ipv4|ipv6|vlan.
-Transport: The transport. One of udp|tcp|icmp.
-vid: The VLAN ID.
-pktsize: The packet size.
+seq命令主要设置往卡上面发送报文的信息：
+
+        seq <seq#> <portlist> dst-Mac src-Mac dst-IP src-IP
+                              sport dport ipv4|ipv6|vlan udp|tcp|icmp vid pktsize
+        
+        <seq#>: The packet sequence number.
+        <portlist>: A portlist as explained above.
+        dst-Mac: The destination MAC address.
+        src-Mac: The source MAC address.
+        dst-IP: The destination IP address.
+        src-IP: The source IP address. Make sure the src-IP has the netmask value such as 1.2.3.4/24.
+        sport: The source port.
+        dport: The destination port.
+        IP: The IP layer. One of ipv4|ipv6|vlan.
+        Transport: The transport. One of udp|tcp|icmp.
+        vid: The VLAN ID.
+        pktsize: The packet size.
 
 ### 3.4 save
 
