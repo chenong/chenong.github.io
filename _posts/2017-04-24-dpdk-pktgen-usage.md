@@ -225,44 +225,46 @@ seq命令主要设置往卡上面发送报文的信息：
         seq <seq#> <portlist> dst-Mac src-Mac dst-IP src-IP
                               sport dport ipv4|ipv6|vlan udp|tcp|icmp vid pktsize
         
-        <seq#>: The packet sequence number.
-        <portlist>: A portlist as explained above.
-        dst-Mac: The destination MAC address.
-        src-Mac: The source MAC address.
-        dst-IP: The destination IP address.
-        src-IP: The source IP address. Make sure the src-IP has the netmask value such as 1.2.3.4/24.
-        sport: The source port.
-        dport: The destination port.
-        IP: The IP layer. One of ipv4|ipv6|vlan.
-        Transport: The transport. One of udp|tcp|icmp.
-        vid: The VLAN ID.
-        pktsize: The packet size.
+        <seq#>:     报文序列号.
+        <portlist>: 网卡编号.
+        dst-Mac:    目的MAC地址.
+        src-Mac:    源MAC地址.
+        dst-IP:     目的IP地址.
+        src-IP:     源IP地址. 确保sip有网络掩码，例如1.2.3.4/24.
+        sport:      源端口.
+        dport:      目的端口.
+        IP:         IP层协议. One of ipv4|ipv6|vlan.
+        Transport:  传输层协议. One of udp|tcp|icmp.
+        vid:        VlanID.
+        pktsize:    报文大小.
 
-### 3.4 save
+### 3.4 save 保存配置文件
 
-The save command saves the current configuration of a file:
+save命令主要保存当前的配置到配置文件中：
 
-save <path-to-file>
+    save <path-to-file>
 
-### 3.5 load
+### 3.5 load 加载配置文件
 
-The load command loads a configuration from a file:
+load命令主要加载一个配置文件从文件中：
 
-load <path-to-file>
-The is most often used with a configuration file written with the save command, see above.
+    load <path-to-file>
 
-### 3.6 ppp
+大多数情况用于加载由save命令保存的配置文件.
 
-The ppp (ports per page) command sets the number of ports displayed per page:
+### 3.6 ppp 显示的的ports数量
 
-ppp [1-6]
+ppp(ports per page)命令设置每一页显示的的ports数量：
 
-### 3.7 icmp.echo
+    ppp [1-6]
 
-The icmp.echo command enables or disables ICMP echo responses per port:
+### 3.7 icmp.echo ICMP回应
 
-icmp.echo <portlist> <state>
-The state variable is explained above.
+icmp.echo命令开启或者关闭某个网卡的ICMP的回应功能：
+
+    icmp.echo <portlist> <state>
+
+[state值参考上面的说明](#3.1 help 帮助命令)
 
 ### 3.8 send
 
