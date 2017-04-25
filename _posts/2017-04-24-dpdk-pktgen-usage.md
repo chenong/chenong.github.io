@@ -264,7 +264,7 @@ icmp.echo命令开启或者关闭某个网卡的ICMP的回应功能：
 
     icmp.echo <portlist> <state>
 
-[state值参考上面的说明](###3.1-help-帮助命令)
+[state值参考上面的说明](#31-help-帮助命令)
 
 ### 3.8 send
 
