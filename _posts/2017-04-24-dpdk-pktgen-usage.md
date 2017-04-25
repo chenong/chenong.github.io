@@ -732,3 +732,30 @@ For example:
 The range command enables or disables the given portlist for sending a range of packets:
 
     range <portlist> <state>
+
+## 4 使用用例
+
+-------------
+```shell
+./pktgen -c fff -n 4 -- -p 0x3 -m "[1:2].0,[3:4].1" -P -T
+#使用0， 1网卡
+#lcore 1 2 rx tx port 0
+#lcore 3 4 rx tx port 1
+#开启混杂模式
+#开启彩色输出
+```
+-------------
+```shell
+./pktgen -c fff -n 4 -- -p 0x3 -m "[1:2].0,[3:4].1" -P -s1:"pcap/text.pcap" -T
+#1端口发送text.pcap中的报文
+```
+-------------
+```shell
+./pktgen -c fff -n 4 -- -p 0x3 -m "[1:2].0,[3:4].1" -P -f /test/seq.pkt -T
+#通过seq.pkt脚本构建报文
+```
+-------------
+```shell
+./pktgen -c fff -n 4 -- -p ff -G -m "[1:2].0,[3:4].1" -P -T 
+#开启本地socket 地址localhost:0x5606
+```
