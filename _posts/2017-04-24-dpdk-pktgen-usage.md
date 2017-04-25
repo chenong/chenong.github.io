@@ -278,47 +278,48 @@ mac_from_arp命令设置是否从ARP请求中获取MAC地址:
 
     mac_from_arp <state>
 
-### 3.10 proto
+### 3.10 proto 传输层协议设置
 
-The proto command sets the packet protocol to UDP or TCP or ICMP per port:
+proto命令在每个port上面设置报文的协议为UDP or TCP or ICMP:
 
-proto udp|tcp|icmp <portlist>
+    proto udp|tcp|icmp <portlist>
 
-### 3.11 type
+### 3.11 type IP层协议设置
 
 The type command sets the packet type to IPv4 or IPv6 or VLAN:
+type命令设置报文的三层协议为IPv4 or IPv6 or VLAN：
 
-type ipv4|ipv6|vlan <portlist>
+    type ipv4|ipv6|vlan <portlist>
 
-### 3.12 geometry
+### 3.12 geometry 显示设置
 
-The geometry command sets the display geometry in columns by rows (colxrow):
+geometry命令设置设置显示的列和行(colxrow):
 
-geometry <geom>
+    geometry <geom>
 
-### 3.13 capture
+### 3.13 capture 抓取报文
 
-The capture command enables/disables packet capturing on a portlist:
+capture命令开启或者关闭网卡的报文抓取功能：
 
-capture <portlist> <state>
+    capture <portlist> <state>
 
-### 3.14 rxtap
+### 3.14 rxtap Rx TAP
 
-The rxtap command enables/disables the Rx tap interface. It support pg_rxtapN:
+rxtap命令开启或者关闭Rx tap接口:
 
-rxtap <portlist> <state>
+    rxtap <portlist> <state>
 
-### 3.15 txtap
+### 3.15 txtap Tx TAP
 
-The txtap command enables/disables Tx the tap interface. It support pg_txtapN:
+txtap命令开启或者关闭Tx tap接口：
 
-txtap <portlist> <state>
+    txtap <portlist> <state>
 
 ### 3.16 vlan
 
-The vlan command enables/disables sending VLAN ID in packets:
+vlan命令开启或者关闭发送带有VLAN ID的报文:
 
-vlan <portlist> <state>
+    vlan <portlist> <state>
 
 ### 3.17 vlanid
 
