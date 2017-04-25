@@ -107,36 +107,27 @@ Usage:
     -m <string>  Matrix for mapping ports to logical cores
 ```
 
-&emsp;&emsp;
-
 ```shell
 Where the options are:
-    -h:  Display the usage/help information shown above:
-    
-         lspci | grep Ethernet
-         This shows a list of all ports in the system. Some ports may not be usable by DPDK/Pktgen. 
-         The first port listed is bit 0 or least  signification bit in the -c EAL coremask. Another 
-         method is to compile and run the DPDK sample application testpmd to list out the ports DPDK
-         is able to use: ./test_pmd -c 0x3 -n 2
-         
-    -s   P:file: The PCAP packet file to stream. P is the port number.
-    
-    -f   filename: The script command file (.pkt) to execute or a Lua script (.lua) file. See Running Script Files.
+    -h:  显示上面显示的使用/帮助信息.
 
-    -l   filename: The filename to write a log to.
+    -s   P:file: PCAP报文文件路径. P端口号，暂时不知道什么用.
     
-    -P:  Enable PROMISCUOUS mode on all ports.
+    -f   filename: pkt脚本或者lua脚本文件路径，定制化执行. See Running Script Files.
+
+    -l   filename: 日志文件路径.
     
-    -G:  Enable socket support using default server values of localhost:0x5606. See Socket Support for Pktgen.
+    -P:  是否开始混杂模式.
     
-    -g   address: Same as -G but with an optional IP address and port number. See Socket Support for Pktgen.
+    -G:  开启socket支持使用默认的服务器地址localhost:0x5606. See Socket Support for Pktgen.
     
-    -T:  Enable color terminal output in VT100
+    -g   address: 和-G差不多但是可以配置IP和PORT. See Socket Support for Pktgen.
     
-    -N:  Enable NUMA support.
+    -T:  开始彩色输出 in VT100
     
-    -m   <string>: Matrix for mapping ports to logical cores. The format of the port mapping string is defined 
-         with a BNF-like grammar as follows:
+    -N:  开启NUMA
+    
+    -m   <string>: DPDK网卡和逻辑核之间的矩阵映射. 映射格式使用BNF-like语法，如下：
          BNF: (or kind of BNF)
          <matrix-string>   := """ <lcore-port> { "," <lcore-port>} """
          <lcore-port>      := <lcore-list> "." <port-list>
@@ -148,30 +139,28 @@ Where the options are:
          <range>           := <num> "-" <num> { "/" <range> }
          <num>             := <digit>+
          <digit>           := 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-```
+         
+         For example:
 
-```
-For example:
-
-1.0, 2.1, 3.2                 - core 1 handles port 0 rx/tx,
-                                core 2 handles port 1 rx/tx
-                                core 3 handles port 2 rx/tx
-1.[0-2], 2.3, ...             - core 1 handle ports 0,1,2 rx/tx,
-                                core 2 handle port 3 rx/tx
-[0-1].0, [2/4-5].1, ...       - cores 0-1 handle port 0 rx/tx,
-                                cores 2,4,5 handle port 1 rx/tx
-[1:2].0, [4:6].1, ...         - core 1 handles port 0 rx,
-                                core 2 handles port 0 tx,
-[1:2].[0-1], [4:6].[2/3], ... - core 1 handles port 0 & 1 rx,
-                                core 2 handles port  0 & 1 tx
-[1:2-3].0, [4:5-6].1, ...     - core 1 handles port 0 rx, cores 2,3 handle port 0 tx
-                                core 4 handles port 1 rx & core 5,6 handles port 1 tx
-[1-2:3].0, [4-5:6].1, ...     - core 1,2 handles port 0 rx, core 3 handles port 0 tx
-                                core 4,5 handles port 1 rx & core 6 handles port 1 tx
-[1-2:3-5].0, [4-5:6/8].1, ... - core 1,2 handles port 0 rx, core 3,4,5 handles port 0 tx
-                                core 4,5 handles port 1 rx & core 6,8 handles port 1 tx
-[1:2].[0:0-7], [3:4].[1:0-7], - core 1 handles port 0 rx, core 2 handles ports 0-7 tx
-                                 core 3 handles port 1 rx & core 4 handles port 0-7 tx
-BTW: you can use "{}" instead of "[]" as it does not matter to the syntax.
-Grouping can use {} instead of [] if required.
+         1.0, 2.1, 3.2                 - core 1 handles port 0 rx/tx,
+                                         core 2 handles port 1 rx/tx
+                                         core 3 handles port 2 rx/tx
+         1.[0-2], 2.3, ...             - core 1 handle ports 0,1,2 rx/tx,
+                                         core 2 handle port 3 rx/tx
+         [0-1].0, [2/4-5].1, ...       - cores 0-1 handle port 0 rx/tx,
+                                         cores 2,4,5 handle port 1 rx/tx
+         [1:2].0, [4:6].1, ...         - core 1 handles port 0 rx,
+                                         core 2 handles port 0 tx,
+         [1:2].[0-1], [4:6].[2/3], ... - core 1 handles port 0 & 1 rx,
+                                         core 2 handles port  0 & 1 tx
+         [1:2-3].0, [4:5-6].1, ...     - core 1 handles port 0 rx, cores 2,3 handle port 0 tx
+                                         core 4 handles port 1 rx & core 5,6 handles port 1 tx
+         [1-2:3].0, [4-5:6].1, ...     - core 1,2 handles port 0 rx, core 3 handles port 0 tx
+                                         core 4,5 handles port 1 rx & core 6 handles port 1 tx
+         [1-2:3-5].0, [4-5:6/8].1, ... - core 1,2 handles port 0 rx, core 3,4,5 handles port 0 tx
+                                         core 4,5 handles port 1 rx & core 6,8 handles port 1 tx
+         [1:2].[0:0-7], [3:4].[1:0-7], - core 1 handles port 0 rx, core 2 handles ports 0-7 tx
+                                         core 3 handles port 1 rx & core 4 handles port 0-7 tx
+         BTW: you can use "{}" instead of "[]" as it does not matter to the syntax.
+         Grouping can use {} instead of [] if required.
 ```
