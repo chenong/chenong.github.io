@@ -14,7 +14,9 @@ tags: DPDK pktgen
 ## 1. 简介
 
 &emsp;&emsp;pktgen(packet gen-erator)该软件基于DPDK快速报文处里框架开发的一个发包工具。
+
 &emsp;
+
 Pktgen提供的功能如下：
 1. 能够提供64byte小报的10Gbit线速发包。
 2. 能够作为线速的收报机或者发报机。
@@ -75,11 +77,14 @@ EAL options for DEBUG use only:
 ```
 &emsp;
 &emsp;&emsp;The -c COREMASK and -n NUM arguments are required. The other arguments are optional.
+
 &emsp;
 &emsp;&emsp;Pktgen需要2个逻辑内核（lcore）才能运行。 第一个lcore，0用于pktgen命令行，用于定时器和在终端上显示运行时实时状态。 附加的1-n被用于执行数据包的接收和发送以及与数据包相关的任何事物。
 &emsp;
+
 &emsp;&emsp;不需要在实际的系统lcore 0上启动。应用程序将使用coremask位图中的第一个lcore作为0核。
 &emsp;
+
 ### 2.2 pktgen运行参数
   
   The Pktgen commandline usage is:
