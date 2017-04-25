@@ -155,4 +155,4 @@ E1000_DEV_ID_I210_COPPER_FLASHLESS 宏定义在e1000_hw.h中有定义, 与网卡
 
 修改完成后，重新编译DPDK以及l2fwd。
 
-测试运行l2fwd收发包正常。
+测试运行l2fwd可以正常检测到网卡并且收发包正常。
