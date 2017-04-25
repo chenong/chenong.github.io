@@ -183,8 +183,8 @@ load <path-to-file>           - Load a command/script file from the
 
 几个命令采用常见的参数，如：
 
-portlist: A list of ports such as <font color=#DC143C>2,4,6-9,12</font> or the word <font color=#DC143C>all</font>.
-state: This is usually <font color=#DC143C>on</font> or <font color=#DC143C>off</font> but will also accept <font color=#DC143C>enable</font> or <font color=#DC143C>disable</font>.
+* portlist: A list of ports such as <font color=DeepPink>2,4,6-9,12</font> or the word <font color=DeepPink>all</font>.
+* state: This is usually <font color=DeepPink>on</font> or <font color=DeepPink>off</font> but will also accept <font color=DeepPink>enable</font> or <font color=DeepPink>disable</font>.
 
 ### 3.2 set 网卡设置
 
@@ -227,7 +227,7 @@ seq命令主要设置往卡上面发送报文的信息：
         
         <seq#>:     报文序列号.
         <portlist>: 网卡编号.
-        dst-Mac:    目的MAC地址.
+        dst-Mac:    目的MAC地址.
         src-Mac:    源MAC地址.
         dst-IP:     目的IP地址.
         src-IP:     源IP地址. 确保sip有网络掩码，例如1.2.3.4/24.
