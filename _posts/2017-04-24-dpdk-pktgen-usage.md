@@ -372,48 +372,53 @@ gre_key命令设置GRE key:
 ### 3.25 pcap
 
 The pcap command enables or disable sending pcap packets on a portlist:
+pcap命令设置开启或者关闭该端口发送pcap报文:
 
-pcap <portlist> <state>
+    pcap <portlist> <state>
 
 ### 3.26 pcap.show
 
-The pcap.show command shows the PCAP information:
+pcap.show 命令显示PCAP文件的信息：
 
-pcap.show
-pcap.index
-
-The pcap.index command moves the PCAP file index to the given packet number:
+    pcap.show
 
 ### 3.27 pcap.index
-Where:
 
-0 = rewind.
--1 = end of file.
+pcap.index命令移动PCAP文件的下标为给予的报文数：
+
+    pcap.index
+    
+    Where:
+    
+    0 = rewind.
+    -1 = end of file.
 
 ### 3.28 pcap.filter
 
-The pcap.filter command sets the PCAP filter string to filter packets on receive:
+pcap.filter命令设置PCAP过滤条件来过滤收到的报文:
 
-pcap.filter <portlist> <string>
+    pcap.filter <portlist> <string>
 
 ### 3.29 script
 
-The script command execute the Lua code in specified file:
+script命令执行Lua脚本:
 
-script <filename>
+    script <filename>
+
 See Running Script Files.
 
 ### 3.30 ping4
 
-The ping4 command sends a IPv4 ICMP echo request on the given portlist:
+ping4命令在改端口上发送一个IPv4 ICMP echo request报文:
 
-ping4 <portlist>
+    ping4 <portlist>
 
 ### 3.31 page
 
-The page command shows the port pages or configuration or sequence page:
+page命令展示端口配置或者序列等信息:
 
-page [0-7]|main|range|config|seq|pcap|next|cpu|rnd
+    page [0-7]|main|range|config|seq|pcap|next|cpu|rnd
+
 Where:
 
 [0-7]: Page of different ports.
@@ -429,15 +434,15 @@ log: Display the log messages page.
 
 ### 3.32 port
 
-The port command sets the sequence of packets to display for a given port:
+port命令设置显示的报文数量序号：
 
-port <number>
+    port <number>
 
 ### 3.33 process
 
-The process command enables or disables processing of ARP/ICMP/IPv4/IPv6 packets:
+process命令开启或者关闭在改端口上面处理ARP/ICMP/IPv4/IPv6报文:
 
-process <portlist> <state>
+    process <portlist> <state>
 
 ### 3.34 garp
 
